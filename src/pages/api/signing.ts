@@ -18,6 +18,7 @@ export type PostResponse = {
   data: string;
   state: string;
   message: string;
+  redirect: string;
 };
 
 export type PutRequest = {
@@ -146,6 +147,7 @@ function postHandler(
     data: data.toString("base64"),
     state: Buffer.from(JSON.stringify(state)).toString("base64"),
     message: "Please sign to connect your account!",
+    redirect: "https://metacamp.so"
   });
 }
 
